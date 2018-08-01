@@ -31,7 +31,7 @@ resource "azurerm_key_vault" "nft_key_vault" {
 
   access_policy {
     tenant_id = "${data.azurerm_client_config.current.tenant_id}"
-    object_id = "5014aa70-8762-4899-b586-3e548732a78a"
+    object_id = "${data.azurerm_client_config.current.service_principal_object_id}"
 
     key_permissions = [
       "create",

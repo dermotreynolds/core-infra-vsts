@@ -22,7 +22,7 @@ resource "azurerm_resource_group" "wfcore_resource_group" {
 
 data "azurerm_client_config" "current" {}
 
-resource "azurerm_key_vault" "nft_key_vault" {
+resource "azurerm_key_vault" "wfcore_key_vault" {
   name                = "${var.organisation}${var.department}${var.environment}-core"
   location            = "${azurerm_resource_group.wfcore_resource_group.location}"
   resource_group_name = "${azurerm_resource_group.wfcore_resource_group.name}"

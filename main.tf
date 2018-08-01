@@ -1,11 +1,10 @@
-#Allow our state to be persisted in blob storage
-# terraform {
-#   backend "azurerm" {
-#     storage_account_name = "wfinfraprd010101"
-#     container_name       = "wfinfraprdstate010101"
-#     key                  = "prod.terraform.tfstate"
-#   }
-# }
+Allow our state to be persisted in blob storage terraform {
+  backend "azurerm" {
+    storage_account_name = "wfinfraprd010101"
+    container_name       = "wfinfraprdstate010101"
+    key                  = "${var.organisation}${var.department}${var.environment}core.state"
+  }
+}
 
 #Create a resource group to put our resources into
 resource "azurerm_resource_group" "wfcore_resource_group" {

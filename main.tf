@@ -1,7 +1,7 @@
 #Allow our state to be persisted in blob storage 
 terraform {
   backend "azurerm" {
-    storage_account_name = "wfinfraprd010101"
+    storage_account_name = "wfinfraprd010102"
     container_name       = "wfinfraprdstate010101"
     key                  = "terraform.core.state"
   }
